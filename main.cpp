@@ -55,6 +55,11 @@ int main(int argc, char** argv) {
             help();
             return 0;
         }
+        else if(arg.find("-") == 0) {
+            std::cerr << "Error: Unknown option: " << arg << "\n";
+            help();
+            return 1;
+        }
         else {
             if(!input_path)
                 input_path = arg;
